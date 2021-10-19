@@ -48,9 +48,12 @@
 .signIn-dropdown {
     right: 0;
     position: relative;
+    color: white;
     /* align-items: center; */
-    margin-left: 40%;
+    /* margin-left: 40%; */
     cursor: pointer;
+    right: 0;
+    margin-left: 45%;
 }
 
 .logo {
