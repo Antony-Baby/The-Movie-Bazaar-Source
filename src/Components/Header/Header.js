@@ -18,7 +18,7 @@ function Header() {
         <div className="header-row2">
         <span onClick={()=> SetleftMenuShow(!leftMenuShow)} className="header-menu_left-icon"><AiFillAppstore size={42}/></span> 
         <a className="header-links" href="https://google.com">Home Page</a>
-        <a className="header-links" href="https://google.com">Header link 2</a>
+        <a className="header-links" href="https://google.com">Header link 1</a>
         <a className="header-links" href="https://google.com">Header link 3</a>
         <a className="header-links" href="https://google.com">Header link 4</a>
         <span className="signIn-dropdown" onClick={()=> SetrightMenuShow(!rightMenuShow)}>
