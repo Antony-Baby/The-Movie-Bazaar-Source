@@ -1,0 +1,22 @@
+.cards {
+    /* position: fixed; */
+    display: flex;
+    /* top: 270px; */
+    /* background-color: red; */
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.main h1 {
+    /* color: white; */
+    margin-top: 20px;
+    padding-left: 15px;
+    color: rgb(17, 4, 4);
+    font-weight: bold;
+    border: rgb(24, 12, 12);
+    border-radius: 2px;
+    font-weight: bold;
+    /* border-bottom: dashed; */
+}
+
+.main {}
