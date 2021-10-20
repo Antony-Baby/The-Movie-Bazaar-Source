@@ -2,13 +2,31 @@ import './Header.css'
 import React, { useState } from "react";
 import {AiFillAppstore} from "react-icons/ai"
 import {FcFilmReel,FcPortraitMode} from "react-icons/fc"
+import { useContext } from 'react';
+import { NavContext } from '../../Context/AppContext';
 
 
 
 function Header() {
+    const context = useContext(NavContext)
+    console.log(context.navActive);
+    const {changeNavBar} = useContext(NavContext)
+    
     const [leftMenuShow, SetleftMenuShow] = useState(false);
     const [rightMenuShow, SetrightMenuShow] = useState(false);
 
+    const navBarclick=()=>{
+        if(!rightMenuShow){
+        SetleftMenuShow(!leftMenuShow)
+        changeNavBar()
+    }
+        
+    }
+    const rnavBarclick=()=>{
+        if(!leftMenuShow){
+        SetrightMenuShow(!rightMenuShow)
+        changeNavBar()  
+}    }
         return(
         <div className="header-container">
         <div className="header-row1">
@@ -16,18 +34,27 @@ function Header() {
         <h1>The Movie Bazaar</h1>
         </div>
         <div className="header-row2">
-        <span onClick={()=> SetleftMenuShow(!leftMenuShow)} className="header-menu_left-icon"><AiFillAppstore size={42}/></span> 
-        <a className="header-links" href="https://google.com">Home Page</a>
-        <a className="header-links" href="https://google.com">Header link 1</a>
-        <a className="header-links" href="https://google.com">Header link 3</a>
-        {/* <a className="header-links" href="https://google.com">Header link 4</a> */}
-        <span className="signIn-dropdown" onClick={()=> SetrightMenuShow(!rightMenuShow)}>
-        <span className="header-links" >Sign In/Register
-        <span className="header-menu_right-icon"><FcPortraitMode size={28}/></span></span>
-        </span>
+            <div className="header-row2-col2">
+                <div className="header-row2-col3">
+                    {/* <span onClick={()=> (SetleftMenuShow(!leftMenuShow) , {changeNavBar}  )} className="header-menu_left-icon"><AiFillAppstore size={42}/></span>  */}
+                    <span onClick={navBarclick} className="header-menu_left-icon"><AiFillAppstore size={42}/></span> 
 
-
-
+                </div>
+                <div className="header-row2-col4">
+                    <div className="header-link-container"><a className="header-links" href="https://google.com">Home Page</a> </div>
+                    <div className="header-link-container"><a className="header-links" href="https://google.com">Header link 1</a></div>
+                    <div className="header-link-container"><a className="header-links" href="https://google.com">Header link 3</a></div> 
+                    <div className="header-link-container"><a className="header-links" href="https://google.com">Header link 4</a></div>
+                </div>
+            </div>
+            <div className="header-row2-col5">
+            <div className="header-link-container"> 
+                <span className="signIn-dropdown" onClick={rnavBarclick}>
+                Sign In/Register
+                <span className="header-menu_right-icon"><FcPortraitMode size={28}/></span>
+                </span>
+            </div> 
+            </div>
         </div>
         { leftMenuShow?
         

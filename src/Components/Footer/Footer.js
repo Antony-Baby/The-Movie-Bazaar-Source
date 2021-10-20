@@ -1,20 +1,33 @@
 import React from 'react'
+import './Footer.css'
+import {Link} from 'react-router-dom'
 
 function Footer() {
     return (
-        <div className="header-container">
-        <div className="header-row1">
-        <img className="logo" src="files/menu_black.png" alt="" />
-        <h1>Title of the page</h1>
+        <div className="footer-container">
+        <div className="footer-col1">
+            <div className="footer-category">
+                <h3>Main</h3>
+                <div className="footer-subcategory">
+        <Link className="footer-links" to="/">Home Page</Link>
+        {/* <a className="footer-links" href="https://google.com">About Us</a> */}
+        <Link className="footer-links" to="/about" >About us</Link>
+        </div></div>
         </div>
-        <div className="header-row2">
-        <a className="header-links" href="https://google.com">Home Page</a>
-        <a className="header-links" href="https://google.com">Header link 2</a>
-        <a className="header-links" href="https://google.com">Header link 3</a>
-        <a className="header-links" href="https://google.com">Header link 4</a>
+        <div className="footer-col2">
+        <h1 className="title">The Movie Bazaar</h1>
+        <h4>Designed and Developed By <span>Antony baby</span></h4>
+        </div>
+        <div className="footer-col3">
+        <div className="footer-category">
+            <h3>Main -2</h3>
+        <div className="footer-subcategory">
+        <a className="footer-links" href="https://google.com">Header link 3</a>
+        <a className="footer-links" href="https://google.com">Header link 4</a>
+        </div>
+        </div>
         
-
-
+</div>
 
         </div>
     )

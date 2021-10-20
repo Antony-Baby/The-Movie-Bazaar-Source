@@ -5,3 +5,12 @@
 body {
     overflow-x: hidden;
 }
+
+
+/* .context-body-enable {} */
+
+.context-body-disable {
+    position: fixed;
+    background-color: rgba(145, 137, 137, 0.5);
+    pointer-events: none;
+}

@@ -26,7 +26,6 @@ function RowMovies(props) {
                       title = title.substring(40)
                     }
                 }
-                console.log(wordCount , title);
                     return(
                 <Card title={title} popularity={obj.popularity} imgs={obj.poster_path?Images+obj.poster_path:"https://cpng.pikpng.com/pngl/s/106-1069399_iam-add-group1-sorry-no-image-available-clipart.png"}/>
                 )})
