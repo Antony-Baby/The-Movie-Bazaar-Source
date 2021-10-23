@@ -19,4 +19,147 @@
     /* border-bottom: dashed; */
 }
 
-.main {}
+.card-buttons {
+    /* background-color: red; */
+    position: relative;
+    margin-top: -90%;
+    display: flex;
+    width: 100%;
+    height: 70px;
+    display: none;
+}
+
+.card-buttons button {
+    text-align: center;
+    height: 50px;
+    /* padding-right: 5%; */
+    /* padding-left: 8px; */
+    width: 45%;
+    border-radius: 20px;
+    box-shadow: 15px, 15px, rgba(16, 16, 17, 0.699);
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.button-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-trailer {
+    color: rgb(240, 25, 25);
+    /* padding-right: 10px; */
+    margin-right: 5px;
+    margin-left: 7px;
+}
+
+.card-details {
+    margin-right: 7px;
+}
+
+.card-inner:hover+.card-buttons,
+.card-img:hover+.card-buttons,
+.card-buttons:hover {
+    display: flex;
+}
+
+
+/* .card-img:hover+.card-buttons {
+    display: flex;
+} */
+
+.card-img :hover,
+.card-body:hover {
+    filter: blur(2px);
+}
+
+.video-player {
+    width: 100%;
+}
+
+
+/* Card css starting */
+
+.card-container {
+    width: 200px;
+    height: 295px;
+    background-color: rgba(227, 228, 235, 0.5);
+    margin-top: 10px;
+    left: 15px;
+    position: relative;
+    padding-top: 5px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 4px 5px #ccc6c6;
+}
+
+.card-inner {
+    position: relative;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 0;
+    width: 190px;
+    height: 100%;
+    border-radius: 15px;
+    /* background-color: rgb(137, 137, 219); */
+    margin-top: 0;
+}
+
+.card-img {
+    position: relative;
+    /* padding: 5px, 5px; */
+    width: 185px;
+    height: 220px;
+    border-radius: 15px;
+    margin-bottom: 0;
+    /* background-color: rgb(181, 181, 212); */
+}
+
+.card-img img {
+    border-radius: 15px;
+}
+
+.card-title {
+    position: relative;
+    /* background-color: red; */
+    width: 140px;
+    /* height: 0px; */
+    top: 10px;
+    margin-left: 42px;
+    align-content: center;
+    text-align: center;
+    padding-left: 5px;
+    overflow: hidden;
+}
+
+.card-title :hover {
+    position: relative;
+    margin-left: 10px;
+    width: 130px;
+    height: 65px;
+    top: 5px;
+    font-size: 14px;
+}
+
+.card-title h4 {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    /* text-align: center; */
+    color: black;
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 2px;
+}
+
+.rating-cycle {
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -2px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+}

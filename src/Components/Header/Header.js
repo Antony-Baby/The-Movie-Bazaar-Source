@@ -4,12 +4,12 @@ import {AiFillAppstore} from "react-icons/ai"
 import {FcFilmReel,FcPortraitMode} from "react-icons/fc"
 import { useContext } from 'react';
 import { NavContext } from '../../Context/AppContext';
+import {Link} from 'react-router-dom'
 
 
 
 function Header() {
     const context = useContext(NavContext)
-    console.log(context.navActive);
     const {changeNavBar} = useContext(NavContext)
     
     const [leftMenuShow, SetleftMenuShow] = useState(false);
@@ -41,8 +41,8 @@ function Header() {
 
                 </div>
                 <div className="header-row2-col4">
-                    <div className="header-link-container"><a className="header-links" href="https://google.com">Home Page</a> </div>
-                    <div className="header-link-container"><a className="header-links" href="https://google.com">Header link 1</a></div>
+                    <div className="header-link-container"><Link className="header-links" to="/The-Movie-Bazaar">Home Page</Link> </div>
+                    <div className="header-link-container"><Link className="header-links" to="/about">About Us</Link></div>
                     <div className="header-link-container"><a className="header-links" href="https://google.com">Header link 3</a></div> 
                     <div className="header-link-container"><a className="header-links" href="https://google.com">Header link 4</a></div>
                 </div>

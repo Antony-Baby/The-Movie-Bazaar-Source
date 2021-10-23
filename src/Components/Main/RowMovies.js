@@ -1,37 +1,90 @@
 import './Main.css'
 import React, { useEffect, useState } from 'react'
-import Card from '../card'
+// import Card from './card'
 import axios from '../../axios'
 import {Images} from '../../constants/constants'
+import { CircularProgressbar,buildStyles } from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
+import { BiListPlus } from "react-icons/bi";
+import { Link } from 'react-router-dom'
+import { NavContext } from '../../Context/AppContext';
+import { useContext } from 'react';
+import Trailer from './Trailer'
+ 
+
+
+
 
 
 function RowMovies(props) {
-    
+    const imgNotFound = "https://cpng.pikpng.com/pngl/s/106-1069399_iam-add-group1-sorry-no-image-available-clipart.png";
+   
+    const {movieDetails,setCloseYfunc} = useContext(NavContext)
     const [movies, setMovie] = useState([])
+    const [trailer,setTrailer] = useState (false)
+
     useEffect(() => {
         axios.get(props.url).then((Response)=>{
             setMovie(Response.data.results)
         })
     }, [])
 
-    return (
-        <div className="main">
-            <h1 className="Title-row1">{props.title}</h1>
-            <div className="cards">
+      return (
+    <div className="main">
+        <h1 className="Title-row1">{props.title}</h1>
+        <div className="cards">
             {movies.map((obj)=>{
-                {
-                    var wordCount = obj.title.length;
-                    var title = obj.title
-                    if(wordCount>40){
-                      title = title.substring(40)
-                    }
+            {
+                var wordCount = obj.title.length;
+                var title = obj.title
+                if(wordCount>40){
+                    title = title.substring(40)
                 }
-                    return(
-                <Card title={title} popularity={obj.popularity} imgs={obj.poster_path?Images+obj.poster_path:"https://cpng.pikpng.com/pngl/s/106-1069399_iam-add-group1-sorry-no-image-available-clipart.png"}/>
+                var rating = (obj.popularity/100).toFixed(2)
+                var mdetails = {
+                    title : obj.title,
+                    id : obj.id                    
+                }
+                }
+                return(
+                <div className="card-container">
+                    <div className="card-inner">
+                        <div className="card-img"> 
+                            <img style={{width:"100%" , height:"100%"}} src={obj.poster_path?Images+obj.poster_path:imgNotFound} alt="" />
+                        </div>
+                        <div className="rating-cycle">
+                            <CircularProgressbar
+                                value={rating}
+                                text={`${rating}%`}
+                                background
+                                backgroundPadding={6}
+                                styles={buildStyles({
+                                backgroundColor: "#000080",
+                                textSize:"21px",                        
+                                textColor: "#f0ffff",
+                                pathColor: "#00ffff",
+                                trailColor: "transparent"
+                            })} />
+                        </div>
+                        <div className="card-title"> <h4> {title} </h4></div>
+                    </div>
+                    <div className="card-buttons">
+                        <button className="card-trailer" onClick={()=>{movieDetails(mdetails);setTrailer(true);setCloseYfunc(true)}}> Watch Trailer
+                        </button>
+                        <button onClick={()=>movieDetails(mdetails)} className="card-details"> <Link className="button-link" to={"/"+obj.title}>View Details <BiListPlus size={14}/> </Link>
+                        </button>
+                    </div>
+                </div>
                 )})
-                }
-            </div> 
-        </div>
+            }
+        </div> 
+        {trailer?
+        <div className="video-player">
+            <Trailer/>                
+            </div>        
+        : null}
+</div>
+    
     )
 }
 
