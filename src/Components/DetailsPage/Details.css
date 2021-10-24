@@ -1,14 +1,95 @@
 .details-page {
+    /* background-color: rgb(136, 90, 22); */
+    margin-left: 20px;
+    /* height: 400px; */
+    padding-right: 50px;
+    padding-left: 50px;
+    width: 60%;
+}
+
+.details-page-container {
+    padding-top: 20px;
+    padding-left: 30px;
     width: 100%;
-    height: 400px;
-    background-color: burlywood;
+    /* background-color: burlywood; */
+    display: flex;
 }
 
 .mtitle {
     width: 100%;
     height: 25%;
     padding-top: 20px;
-    padding-left: 40px;
+    /* padding-left: 40px; */
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
+    /* margin-left: -60px; */
+}
+
+.details-image {
+    height: 250px;
+    width: 200px;
+    margin: 15px 5px;
+}
+
+.details-leftcol {
+    /* background-color: red; */
+    display: block;
+    border-radius: 25px;
+    border-style: solid;
+    height: 100%;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    border-color: salmon;
+}
+
+.details-leftcol h3 {
+    padding: 15px 0px 0px 10px;
+}
+
+.movie-details-table {
+    /* border-style: groove; */
+    background-color: rgba(71, 197, 247, 0.7);
+    width: 100%;
+}
+
+table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+    /* border: 3px solid purple; */
+}
+
+td,
+th {
+    padding: 10px 10px 10px 10px;
+}
+
+thead {
+    border-bottom: 2px solid;
+}
+
+tbody td:nth-child(1) {
+    text-align: center;
+    width: 30%;
+    /* background-color: red; */
+    /* padding-right: 20px; */
+    font-weight: bold;
+}
+
+tbody td:nth-child(2) {
+    width: 30%;
+    /* background-color: rgb(25, 0, 255); */
+    padding-left: 10%;
+}
+
+tbody td:nth-child(3) {
+    /* width: 40%; */
+    /* background-color: rgb(25, 0, 255); */
+    /* padding-left: 10%; */
+}
+
+.overview {
+    border: 1px dashed;
+    padding: 10px;
 }

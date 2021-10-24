@@ -17,6 +17,10 @@
     /* height: 44px; */
     padding-left: 10px;
     cursor: pointer;
+    /* z-index: 1; */
+    /* font-size: 0px; */
+    /* position: relative; */
+    /* color: rgb(145, 137, 137); */
 }
 
 .header-row1 h1 {
@@ -97,59 +101,4 @@
 .logo {
     padding-top: 5px;
     padding-left: 12px;
-}
-
-.left-menu {
-    height: 537px;
-    width: 20%;
-    position: relative;
-    z-index: 1;
-    left: 0;
-    background-color: rgb(145, 137, 137);
-    transition: .5s ease;
-    overflow-x: hidden;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.list {
-    margin-top: 30px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 20px, 20px, 50px, 30px;
-    padding-left: 20px;
-}
-
-.list h4 {
-    padding-bottom: 10px;
-    color: white;
-}
-
-ul li {
-    list-style-type: none;
-}
-
-.r-menu {
-    right: 0;
-    margin-left: 85%;
-    height: 250px;
-    position: relative;
-    z-index: 1;
-    background-color: rgb(145, 137, 137);
-    transition: .5s ease;
-    overflow-x: hidden;
-    align-items: right;
-    margin-bottom: 20px;
-    overflow-y: hidden;
-}
-
-.r-list {
-    margin-top: 30px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    padding: 20px, 20px, 50px, 30px;
-    padding-left: 20px;
 }

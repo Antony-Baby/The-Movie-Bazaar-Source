@@ -26,7 +26,11 @@ const Navbar = ({children}) => {
         setCloseY(stat)
     }
     return(
-        <NavContext.Provider value ={{navActive , changeNavBar,Mdetails,movieDetails,closeY,setCloseYfunc}} > {children}</NavContext.Provider>
+        <NavContext.Provider value ={{
+            navActive , changeNavBar,
+            Mdetails,movieDetails,
+            closeY,setCloseYfunc,
+        }} > {children}</NavContext.Provider>
 
     )
 

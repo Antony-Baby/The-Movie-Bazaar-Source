@@ -10,11 +10,6 @@ import { Link } from 'react-router-dom'
 import { NavContext } from '../../Context/AppContext';
 import { useContext } from 'react';
 import Trailer from './Trailer'
- 
-
-
-
-
 
 function RowMovies(props) {
     const imgNotFound = "https://cpng.pikpng.com/pngl/s/106-1069399_iam-add-group1-sorry-no-image-available-clipart.png";
@@ -22,7 +17,7 @@ function RowMovies(props) {
     const {movieDetails,setCloseYfunc} = useContext(NavContext)
     const [movies, setMovie] = useState([])
     const [trailer,setTrailer] = useState (false)
-
+    
     useEffect(() => {
         axios.get(props.url).then((Response)=>{
             setMovie(Response.data.results)
@@ -41,7 +36,7 @@ function RowMovies(props) {
                     title = title.substring(40)
                 }
                 var rating = (obj.popularity/100).toFixed(2)
-                var mdetails = {
+                var mdetailsobj = {
                     title : obj.title,
                     id : obj.id                    
                 }
@@ -69,9 +64,9 @@ function RowMovies(props) {
                         <div className="card-title"> <h4> {title} </h4></div>
                     </div>
                     <div className="card-buttons">
-                        <button className="card-trailer" onClick={()=>{movieDetails(mdetails);setTrailer(true);setCloseYfunc(true)}}> Watch Trailer
+                        <button className="card-trailer" onClick={()=>{movieDetails(mdetailsobj);setTrailer(true);setCloseYfunc(true)}}> Watch Trailer
                         </button>
-                        <button onClick={()=>movieDetails(mdetails)} className="card-details"> <Link className="button-link" to={"/"+obj.title}>View Details <BiListPlus size={14}/> </Link>
+                        <button onClick={()=>movieDetails(mdetailsobj)} className="card-details"> <Link className="button-link" to={"/Movie/"+obj.title}>View Details <BiListPlus size={14}/> </Link>
                         </button>
                     </div>
                 </div>
