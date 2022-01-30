@@ -2,7 +2,7 @@ import './Main.css'
 import React, { useEffect, useState } from 'react'
 // import Card from './card'
 import axios from '../../axios'
-import {Images} from '../../constants/constants'
+import {Images , imgNotFound} from '../../constants/constants'
 import { CircularProgressbar,buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import { BiListPlus } from "react-icons/bi";
@@ -12,7 +12,6 @@ import { useContext } from 'react';
 import Trailer from './Trailer'
 
 function RowMovies(props) {
-    const imgNotFound = "https://cpng.pikpng.com/pngl/s/106-1069399_iam-add-group1-sorry-no-image-available-clipart.png";
    
     const {movieDetails,setCloseYfunc} = useContext(NavContext)
     const [movies, setMovie] = useState([])
@@ -36,6 +35,9 @@ function RowMovies(props) {
                     title = title.substring(40)
                 }
                 var rating = (obj.popularity/100).toFixed(2)
+                { var id_Decode= (obj.id+561).toString(16)
+                }
+                
                 var mdetailsobj = {
                     title : obj.title,
                     id : obj.id                    
@@ -66,7 +68,7 @@ function RowMovies(props) {
                     <div className="card-buttons">
                         <button className="card-trailer" onClick={()=>{movieDetails(mdetailsobj);setTrailer(true);setCloseYfunc(true)}}> Watch Trailer
                         </button>
-                        <button onClick={()=>movieDetails(mdetailsobj)} className="card-details"> <Link className="button-link" to={"/Movie/"+obj.title}>View Details <BiListPlus size={14}/> </Link>
+                        <button onClick={()=>movieDetails(mdetailsobj)} className="card-details"> <Link className="button-link" to={"/Movie/"+id_Decode+"/"+obj.title}>View Details <BiListPlus size={14}/> </Link>
                         </button>
                     </div>
                 </div>
