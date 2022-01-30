@@ -24,7 +24,7 @@ function App() {
         <Route path='/The-Movie-Bazaar' exact ><MainBody/></Route>
         <Route path=  '/about' component={About}/>
         {/* <Route path={"/"+context.Mdetails.title} component={Details}/> */}
-        <Route path={"/Movie/:id"}><Details/></Route>
+        <Route path={"/Movie/:id/:name"}><Details/></Route>
 
       </Switch>
       </div>
