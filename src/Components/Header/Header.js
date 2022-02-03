@@ -48,7 +48,7 @@ function Header() {
                     <div className="header-link-container"><Link className="header-links" to="/The-Movie-Bazaar">Home Page</Link> </div>
                     <div className="header-link-container"><Link className="header-links" to="/about">About Us</Link></div>
                     <div className="header-link-container"><a className="header-links" href="https://google.com">User Review</a></div> 
-                    <div className="header-link-container"><a className="header-links" href="https://google.com">Header link 4</a></div>
+                    <div className="header-link-container"><a className="header-links" href="https://google.com">More</a></div>
                 </div>
             </div>
             <div className="header-row2-col5">
