@@ -35,6 +35,9 @@ function RowMovies(props) {
                     title = title.substring(40)
                 }
                 var rating = (obj.popularity/100).toFixed(2)
+                if(rating>100){
+                    rating=100
+                }
                 { var id_Decode= (obj.id+561).toString(16)
                 }
                 
